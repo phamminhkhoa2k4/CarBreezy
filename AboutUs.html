@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="icon" type="img/jpg" href="assets/img/thumbnail/icon.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <style>
+        .imglogo{
+            text-align: center; 
+            margin-bottom: 0px; 
+            margin-right: opx;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .imgOurRoots{
+            flex-grow: 1; 
+            margin-right: 20px;
+        }
+
+        .container {
+            color: #212121;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.5;
+            padding-left: 25px;
+            align-items: center;
+            display: flex;
+            margin: 50px auto 0;
+            height: 100%;
+            max-width: 1170px;
+        }
+
+        .overlay {
+            position: absolute;
+            margin: 0px 0px 220px 110px;
+            color: #05032c;
+            background-color: #b6bec1;
+        }
+
+        .whoWeAre {
+            width: 73%;
+            margin: auto;
+            font-size: 20px;
+        }
+
+        .whoWeAre a {
+            color: #0f0b3e;
+        }
+
+        .whoWeAre a:hover {
+            color: #0b96f4;
+        }
+
+        .ourRoots {
+            font-size: 22px;
+            background-color: #284470;
+            color: white;
+            margin-top: 20px;
+            padding: 30px;
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center;
+        }
+
+        .ourRoots_content{
+            flex-basis: 580px; 
+            flex-grow: 1;
+        }
+
+        .ourRoots_content a {
+            color: #0b96f4;
+        }
+
+        .content {
+            margin-top: 100px;
+
+        }
+
+        h3 {
+            margin-left: 15px;
+        }
+
+        h4 {
+            color: #47b9fa;
+        }
+
+        .slidee {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 38px;
+            text-align: center;
+        }
+
+        div div div a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="state" style="display: none;">
+        <nav style="z-index: 1000;">
+            <div class="support">
+                <a class="a-reset" onclick="showhide('support-menu')">
+                    <b>Suppport & Contact Us</b>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+
+                <ul id="support-menu" style="display: none;">
+                    <li>
+                        <a href="mailto:Support@carbreezy.com"><i class="fa fa-envelope-o"
+                                aria-hidden="true"></i>Support@carbreezy.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:(253) 289-5242"><i class="fa fa-phone" aria-hidden="true"></i>(253) 289-5242</a>
+                    </li>
+                    <li>
+                        <a href="SignUp.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- The navigation bar of the website -->
+            <div class="navbar">
+                <a href="Home.html">
+                    <div class="brand"></div>
+                </a>
+                <ul id="navbar-menu">
+                    <li class="navbar-menu-title" style="display: none;">
+                        <b>Menu</b>
+                        <i class="fa fa-times" id="navbar-menu-close" aria-hidden="true"
+                            onclick="showhideMenu('navbar-menu')"></i>
+                    </li>
+                    <li><a href="Home.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="Sell.html"><i class="fa fa-shopping-cart"></i> Sell Your Car</a></li>
+                    <li><a href="Home.html#whyCarBreezy"><i class="fa fa-truck"></i> Why Carbreezy</a></li>
+                    <li><a href="Offers.html"><i class="fa fa-gift"></i> Offers</a></li>
+                    <li><a href="#contactUS"><i class="fa fa-telegram"></i> Contact Us</a></li>
+                    <li><a href="aboutus.html"><i class="fa fa-info"></i> About Us</a></li>
+
+                    <li class="supportResponsive" onclick="showhideResponsiveSupport()" style="display: none;">
+                        <a class="a-reset">
+                            <b>Support & Contact Us</b>
+                            <i class="fa fa-angle-down cursor" aria-hidden="true"></i>
+                        </a>
+
+                    </li>
+                    <li id="support-menu-responsive" style="display: none;">
+                        <a style="border-bottom: 1px solid #dadada;" href="mailto:Support@carbreezy.com"><i
+                                class="fa fa-envelope-o" aria-hidden="true"></i>Support@carbreezy.com</a>
+                        <a href="tel:1-253-289-5242"><i class="fa fa-phone" aria-hidden="true"></i>1-253-289-5242</a>
+                        <a href="SignUp.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</a>
+                    </li>
+
+                </ul>
+
+                <div class="navbar-menu-icon cursor" id="navbar-menu-icon" style="display: none;"
+                    onclick="showhideMenu('navbar-menu-icon');">
+                    <i class="fa fa-bars" aria-hidden="true" id="navbar-menu-icon-i"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- title at the top left corner of the page -->
+            <h3>About Us</h3>
+            <div class="imglogo"><img src="assets/img/thumbnail/logoFont.jpg"
+                    height="110px" width="350px"></div>
+            <!-- slogan -->
+            <div class="title"> Our highest honor will always be your vote of confidence.</div>
+            <p class="slidee"><br><br style="color: #011548;">CarBreezy<br>
+                <a href="tel:(253) 289-5242" class="numContact">(253) 289-5242</a>
+            </p>
+            <div class="container">
+                <img class="image" src="assets/img/thumbnail/workingAboutUs.jpg" height="400px">
+                <!-- title display on the image -->
+                <span class="overlay">
+                    <h1>About CarBreezy</h1>
+                </span>
+            </div>
+            <div class="whoWeAre"><br>
+                <!-- heading -->
+                <h1 style="color:midnightblue">Who we are</h1>
+                <!-- content -->
+                <a href="CarBreezy.html">CarBreezy</a> is a leading automotive digital marketplace that seeks to make
+                car buying
+                and selling easy, transparent and efficient.
+                Your car buying destiny is in your hands, but we will help you every step of the way. We
+                built this site to make car buying as fast and easy as possible.
+                From discovery to delivery, consumers can use <a href="CarBreezy.html">CarBreezy</a> to explore vehicles
+                from an
+                expansive, cross-brand selection of inventory from our vast network.
+                <a href="CarBreezy.html">CarBreezy</a> has built a trusted brand and a strong reputation for providing
+                consumers
+                with
+                useful tools, research, market context and pricing transparency as they embark on their
+                car-buying journey. The Company is bringing more of the purchasing process online by
+                allowing consumers to find a vehicle that is right for them and complete their purchase
+                with all from the comfort of their home.
+                <p>For more information, visit <a href="mailto:support@carbreezy.com"
+                        style="color: #00BFDE;">support@carbreezy.com</a></p>
+            </div>
+
+            <div class="ourRoots">
+                <div class="imgOurRoots"><img src="assets/img/thumbnail/ourRoots.jpg" width="100%"></div>
+                <div class="ourRoots_content">
+                    <!-- title -->
+                    <h1 style="color:#00BFDE">Our roots</h1>
+                    <!-- content -->
+                    <div>
+                    <a href="CarBreezy.html">CarBreezy</a> invented car search. Our site and innovative solutions
+                    connect buyers
+                    and sellers to match people with their perfect car.
+                    We still maintain a startup culture with innovation and passion for our people at the core of
+                    everything we
+                    do.
+                    <a href="CarBreezy.html">CarBreezy</a> has an award-winning brand, leadership team, and the best
+                    and
+                    brightest employees in the industry.
+                    We've been featured as one of the top places to work.
+                    <p>President and CEO, <a href="CarBreezy.html">CarBreezy</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <footer class="text-center text-lg-start bg-white text-muted">
+            
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <div>
+                    
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3 text-secondary"></i><img src="assets/img/thumbnail/logo.jpg"
+                                    width="200px" style="margin: 10px 10px 10px 10px;">
+                            </h6>
+                            <p>You can choose any dream car for yourself <a href="#cover"
+                                    style="text-decoration: none;">here</a>.</p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <ul id="BuySell" class="a-reset1">
+                                <li>
+                                    <h6 class="text-uppercase fw-bold mb-4">
+                                        <b>Buying & Selling</b>
+                                    </h6>
+                                </li>
+                                <li><a href="#search" class="text-reset">Find a Car</a></li>
+                                <li><a href="Sell.html" class="text-reset">Sell your Car</a></li>
+                                <li><a href="Offers.html" class="text-reset">Offers for you</a></li>
+                                <li><a href="Offers.html#myInstantCashOffer" class="text-reset">My Instant Cash Offer</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <ul id="ourCompany" class="a-reset1">
+                                <li>
+                                    <h6 class="text-uppercase fw-bold mb-4">
+                                        <b>Our Company</b>
+                                    </h6>
+                                </li>
+                                <li><a href="AboutUs.html" class="text-reset">About CarBreezy</a></li>
+                                <li><a href="tel:(253) 289 5242" class="text-reset">Contact CarBreezy</a></li>
+                                <li><a href="Sitemap.html" class="text-reset">Sitemap</a></li>
+                                <li><a href="Sell.html#resolveYourQueries" class="text-reset">Resolve Your Queries</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contactUS">
+                            <!-- Links -->
+                            <h4 class="text-uppercase fw-bold mb-4">Contact Us</h4>
+                            <p>
+                            <h6 style="font-weight: bold;">We're here to help.</h6>
+                            </p>
+                            <p>Contact us if you have a question or concern. We want you to feel confident and
+                                supported throughout your vehicle-buying joyrney. We'll do our very best to provide
+                                answers and set your mind at ease.</p>
+                            <p style="color:rgb(3, 3, 49);"><a href="mailto:support@carbreezy.com"
+                                    style="text-decoration: none;"><i
+                                        class="fa fa-envelope me-3 text-secondary"></i>support@carbreezy.com</a></p>
+                            <p style="color:rgb(3, 3, 49);"><a href="tel:(253) 289-5242" 
+                                    style="text-decoration: none;"><i class="fa fa-phone me-3 text-secondary"></i> (253)
+                                    289-5242)</a></p>
+                            <p style="color:rgb(3, 3, 49);"><a href="tel:1-253-289-5242"
+                                    style="text-decoration: none;"><i class="fa fa-print me-3 text-secondary"></i>
+                                    1-253-289-5242</a></p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold" href="">Carbreezy.com</a>
+            </div>
+    
+            <div class="scroll-footer">
+            
+                <div class="scroll-footer__ticker">
+                <p class="continuous"><span id="date"></span></p>
+                <p class="continuous continuous--two"><span id="GeoLocation"></span></p>
+                <!-- <p class="msg msg--three"><span id="date"></span></p>
+                <p class="msg msg--four"><span id="GeoLocation"></span></p> -->
+                </div>
+            
+            </div>
+        </footer>
+    </div>
+    <!-- loading four circles animation-->
+    <div id="loader">
+        <div class="wap-loading">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- get current date, time, and location to show in a continuous scrolling ticker at the bottom of the page-->
+    <script>
+        var today = new Date();
+        var date = (+ today.getHours() +":" +today.getMinutes() +"&nbsp;&nbsp;" + (today.getMonth()+1) +"/" + today.getDate() +"/" + today.getFullYear());
+        document.getElementById("date").innerHTML = date;
+
+        var x = document.getElementById("GeoLocation");
+            function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            }
+            function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "&nbsp;&nbsp;Longitude: " + position.coords.longitude;
+            }
+            getLocation();
+    </script>
+    <link rel="stylesheet" href="assets/css/continuousScrolling.css">
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .enterr{
+            width: 370px;
+        }
+        .color-color{
+            color:#4580f7;
+        }
+        .slideee{
+            text-align: center;
+        }
+        .btnSignUp{
+            text-align: center;
+            background-color:#07245d; 
+            color:#fff;
+        }
+        form table tr td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm">
+        <table align="center" style="border:1px solid #07245d; width: 400px; padding: 30px;">
+            <tr><th class="slideee color-color">Create an account to:</th></tr>
+            <tr>
+                <td>
+                <ul class="list">
+                    <li>Buy a car 100% online</li>
+                    <li>Follow the latest car brands updated</li>
+                    <li>Save your progress during purchase process</li>
+                    <li>Feedback</li>
+                    <li>See the status of your orders</li>
+                </ul></td>
+            </tr>
+            <tr><td>First name</td></tr>
+            <tr><td><input class="enterr" type="text" id="fname" placeholder="As it appears on your legal ID" required>
+                    <span id="firstName" style="display: none; color: red;">First name is required.</span>
+            </td></tr>
+            <tr><td>Last name</td></tr>
+            <tr><td><input class="enterr" type="text" id="lname" placeholder="As it appears on your legal ID" required>
+                    <span id="lastName" style="display: none; color: red;">Last name is required.</span>
+            </td></tr>
+            <tr><td>Email</td></tr>
+            <tr><td><input class="enterr" type="email" id="email" placeholder="Ex.name@abc.com" required>
+                    <span id="emailRequired" style="display: none; color: red;">Email is required.</span>
+                    <span id="emailInvalid" style="display: none; color: red;">Invalid email address.</span></td></tr>
+            <tr><td>Phone</td></tr>
+            <tr><td><input class="enterr" type="tel" id="phone" placeholder="(_ _ _) _ _ _ - _ _ _" required>
+                    <span id="phonerequired" style="display: none; color: red;">Phone number is required.</span>
+                    <span id="phonenumber" style="display: none; color: red;">Please enter a number.</span></td></tr>
+            <tr><td>Password</td></tr>
+            <tr><td><input class="enterr" type="password" id="pass" placeholder="6 characters minimum" required>
+                    <span id="password" style="display: none; color: red;">Password is required.</span>
+                    <span id="passwordlength" style="display: none; color: red;">Password must be more than 6 characters.</span></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td><input type="checkbox" id="ckagree" required> Keep me posted about CarBreezy promos and news via email.
+                    <span id="accept" style="display: none; color: red;">Please accept notice from CarBreezy.</span></td></tr>
+            <tr><td>By clicking the "Sign Up" button, you are creating a CarBreezy account and indicating that you agree to CarBreezy's Terms of Use and Privacy Policy.</td></tr>
+            <tr><td><br ></td></tr>
+            <tr><td class="slideee"><input type="button" id="btnSignUp" class="btnSignUp" value="Sign Up" ng-disabled="myForm.$invalid" onclick="signUp()"></td></tr>
+            <tr><td><br ></td></tr>
+        </table>
+    </form>
+</body>
+<script>
+    function signUp(){
+        var fname = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var re =/^[0-9A-Za-z]+(@)[0-9a-zA-Z.]+$/;
+        var email = document.getElementById("email");
+        var phonenum = document.getElementById("phone");
+        var password = document.getElementById("pass");
+        var agree = document.getElementById("ckagree");
+        var errorFirstName = document.getElementById("firstName");
+        var errorLastName = document.getElementById("lastName");
+        var errorEmailRequired = document.getElementById("emailRequired");
+        var errorEmailInvalid = document.getElementById("emailInvalid");
+        var errorPhone = document.getElementById("phonerequired");
+        var errorPhonenumber = document.getElementById("phonenumber");
+        var errorPassword = document.getElementById("password");
+        var errorPasswordlength = document.getElementById("passwordlength");
+        var errorAccept = document.getElementById("accept");
+        if(fname.value == ""){
+            errorFirstName.style.display = 'block';
+            fname.focus();
+            return;
+        }
+        else{
+            errorFirstName.style.display = 'none';
+        }
+
+        if(lname.value == ""){
+            errorLastName.style.display = 'block';
+            lname.focus();
+            return;
+        }
+        else{
+            errorLastName.style.display = 'none';
+        }
+
+        if(email.value == ""){
+            errorEmailRequired.style.display = 'block';
+            email.focus();
+            return;
+        }
+        else{
+            errorEmailRequired.style.display = 'none';
+        }
+        
+        if(!re.test(email.value)){
+            errorEmailInvalid.style.display = 'block';
+            email.focus();
+            return;
+        }
+        else{
+            errorEmailInvalid.style.display = 'none';
+        }
+
+        if(phonenum.value == ""){
+            errorPhone.style.display = 'block';
+            phonenum.focus();
+            return;
+        }
+        else{
+            errorPhone.style.display = 'none';
+        }
+
+        if(isNaN(phonenum.value)){
+            errorPhonenumber.style.display = 'block';
+            phonenum.focus();
+            return;
+        }
+        else{
+            errorPhonenumber.style.display = 'none';
+        }
+
+        if(password.value == ""){
+            errorPassword.style.display = 'block';
+            password.focus();
+            return;
+        }
+        else{
+            errorPassword.style.display = 'none';
+        }
+
+        if (eval(password.value.length) <=6){
+            errorPasswordlength.style.display = 'block';
+            password.focus();
+            return;
+        }
+        else{
+            errorPasswordlength.style.display = 'none';
+        }
+        if(!(agree.checked)){
+            errorAccept.style.display = 'block';
+            return;
+        }
+        else{
+            errorAccept.style.display = 'none';
+            // displayed when successful sign up
+            document.write("<div style=' width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; '><div><img style='width: 100px; height: 100px; margin-bottom: 70px;' src='assets/img/thumbnail/successfully.png' alt='success'></div><div style='font-size: 32px;'>Congratulations, your account has been successfully created.</div></div>");
+            setTimeout(function(){
+                    window.location.href = "Home.html";
+                },3000);
+        }
+    }
+</script>
+</html>

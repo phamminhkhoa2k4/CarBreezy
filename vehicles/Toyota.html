@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="../assets/js/angular.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .titleBrand{
+            margin: 0 auto;
+            max-width: 1239px;
+            padding: 0 16px;
+        }
+        .product-header a{
+            color: #041030;
+            text-decoration: none;
+        }
+        .product-header a:hover{
+            color: #010634;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myControl">
+    <div class="titleBrand"><h1>Toyota</h1></div>
+    <div class="body">
+        <div class="products">
+            <div class="product cursor" ng-repeat="car in cars | filter:{brand: 'Toyota'} ">
+                <a href="../vehicleDetails.html"><div class="car"><img src="../{{car.img}}"></div></a>
+                <div class="product-description">
+                    <div>{{car.state}}</div>
+                    <div class="product-header">
+                        <a href="vehicleDetails.html" class="namename">{{car.year}} {{car.name}}</a>
+                    </div>
+                    <div>{{car.miles}}</div>
+                    <p><b class="price">{{car.price}}</b></p>
+                    <p>{{car.payment}}</p>
+                    <p>{{car.tax}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

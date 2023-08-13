@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="icon" type="img/jpg" href="assets/img/thumbnail/icon.jpg">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/offers.js"></script>
+    <style>
+        h3 {
+            margin-left: 15px;
+        }
+        .imgDriveCar{
+            max-height: 600px; 
+            height: 100%;
+            width: 100%;
+        }
+        .imglogo{
+            text-align: center; 
+            margin-bottom: 0px; 
+            margin-right: opx;
+        }
+        .slidee {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px; 
+            color:#031e65;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 33px;
+            text-align: center;
+        }
+        .numContact {
+            text-decoration: none;
+            color: #011548;
+        }
+        .deals{
+            display:flex; 
+            flex-wrap: wrap; 
+            margin: 45px 0px 0px 100px;
+        }
+        .deals_imgCargift{
+            width: 530px; 
+            height: 430px; 
+            max-width: 100%; 
+            margin-bottom: 32px;
+        }
+        .deals_content{
+            margin-left: 80px; 
+            flex-grow: 1; 
+            flex-basis: 300px;
+        }
+        .instantCashOffer{
+            display: flex; 
+            flex-direction: column;
+        }
+        .instantCashOffer_title{
+            text-align:center; 
+            color:#031e65;
+        }
+        .query {
+            text-decoration: none;
+            margin-left: 50px;
+        }
+        .resolve{
+            background-color: rgb(233, 243, 254); 
+            width: 700px; 
+            height: 300px; 
+            margin: auto;
+        }
+        .resolve tr td{
+            padding: 16px 32px;
+        }
+        div div div div h4:hover{
+            color: #2798f4;
+        }
+        .readyToSupportYou{
+            margin: 32px auto; 
+            width: 45%; 
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div id="state" style="display: none;">
+        <nav style="z-index: 1000;">
+            <div class="support">
+                <a class="a-reset" onclick="showhide('support-menu')">
+                    <b>Suppport & Contact Us</b>
+                    <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </a>
+
+                <ul id="support-menu" style="display: none;">
+                    <li>
+                        <a href="mailto:Support@carbreezy.com"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        Support@carbreezy.com</a>
+                    </li>
+                    <li>
+                        <a href="tel:(253) 289-5242"><i class="fa fa-phone" aria-hidden="true"></i>(253) 289-5242</a>
+                    </li>
+                    <li>
+                        <a href="SignUp.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- The navigation bar of the website -->
+            <div class="navbar">
+                <a href="Home.html">
+                    <div class="brand"></div>
+                </a>
+                <ul id="navbar-menu">
+                    <li class="navbar-menu-title" style="display: none;">
+                        <b>Menu</b>
+                        <i class="fa fa-times" id="navbar-menu-close" aria-hidden="true"
+                            onclick="showhideMenu('navbar-menu')"></i>
+                    </li>
+                    <li><a href="Home.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="Sell.html"><i class="fa fa-shopping-cart"></i> Sell Your Car</a></li>
+                    <li><a href="Home.html#whyCarBreezy"><i class="fa fa-truck"></i> Why Carbreezy</a></li>
+                    <li><a href="Offers.html"><i class="fa fa-gift"></i> Offers</a></li>
+                    <li><a href="#contactUS"><i class="fa fa-telegram"></i> Contact Us</a></li>
+                    <li><a href="AboutUs.html"><i class="fa fa-info"></i> About Us</a></li>
+
+                    <li class="supportResponsive" onclick="showhideResponsiveSupport()" style="display: none;">
+                        <a class="a-reset">
+                            <b>Support & Contact Us</b>
+                            <i class="fa fa-angle-down cursor" aria-hidden="true"></i>
+                        </a>
+
+                    </li>
+                    <li id="support-menu-responsive" style="display: none;">
+                        <a style="border-bottom: 1px solid #dadada;" href="mailto:Support@carbreezy.com"><i
+                                class="fa fa-envelope-o" aria-hidden="true"></i>Support@carbreezy.com</a>
+                        <a href="tel:1-253-289-5242"><i class="fa fa-phone" aria-hidden="true"></i>1-253-289-5242</a>
+                        <a href="SignUp.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Sign Up</a>
+                    </li>
+
+                </ul>
+
+                <div class="navbar-menu-icon cursor" id="navbar-menu-icon" style="display: none;"
+                    onclick="showhideMenu('navbar-menu-icon');">
+                    <i class="fa fa-bars" aria-hidden="true" id="navbar-menu-icon-i"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!-- image alignment -->
+        <div style="margin-top: 90px;">
+            <div class="slidee"><img src="assets/img/thumbnail/driverCar.jpg" class="imgDriveCar"></div>
+            <div class="imglogo"><img src="assets/img/thumbnail/logoFont.jpg"
+                    height="110px" width="350px"></div><p id="dealsForYou"></p>
+            <div class="title"> We fully commit to offering you the best experience </div>
+            <!-- listing of offers -->
+            <div class="deals">
+                <div><img src="assets/img/thumbnail/offersCargift.jpg" class="deals_imgCargift"></div>
+                <div class="deals_content">
+                    <b class="slidee">Deals made especially for you</b>
+                    <h4>Get the Instant Cash Offer</h4>
+                    <p>Find out what you can get for your car today. Offers are good for 7 days.</p>
+                    <h4>Get Cash or Trade-In Credit</h4>
+                    <p>The offer is the same whether you sell or trade in.</p>
+                    <h4>Our Priority is People</h4>
+                    <p>We like to think of ourselves as people-people. That's why we built CarBreezy around you.
+                        No Pressure, no commissions, no hidden fees, just smiling faces every step of the way.</p>
+                    <h4>You're CarBreezy Covered</h4>
+                    <p id="myInstantCashOffer">Relax, don't do it, when you wanna go do it... don't stress out! You're protected by our lifetime powertrain warranty!</p>
+                </div>
+            </div><br><br>
+            <!-- My Instant Cash Offer table -->
+            <div class="instantCashOffer">
+            <table border="0px;" class="resolve">
+                <!-- title -->
+                <thead><h3 class="instantCashOffer_title"><b>My Instant Cash Offer</b></h3></thead>
+                <tbody style="padding: 16px;">
+                <tr>
+                    <td class="query">
+                        <!-- the question when clicked will display the answer -->
+                        <a style="cursor: pointer;" onclick="query1('query1')">
+                            <b>How is my Instant Cash Offer calculated? </b>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <!-- the answer -->
+                        <span id="query1" style="display: none;">Your Instant Cash Offer is calculated using a proprietary tool that accounts for 
+                            fluctuating market conditions and used car prices that may vary from day to day, like home or stock prices. 
+                            The calculation includes multiple data sources and is based on factors that affect used car pricing such as:
+                            - Regional Differences
+                            - Local Market Influences
+                            - Supply and Demand
+                            - Historical Trends
+                            - Your Specific Vehicle Details 
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="query">
+                        <!-- the question when clicked will display the answer -->
+                        <a style="cursor: pointer; " onclick="query2('query2')">
+                            <b>Am I obligated to redeem my Instant Cash Offer?</b>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <!-- the answer -->
+                        <span id="query2" style="display: none;">No. There is no obligation to trade-in or sell your car by simply receiving an Offer. 
+                            The choice is yours.</span>
+                    </td>
+                </tr>
+                <tr>
+                <td class="query">
+                    <a style="cursor: pointer; " onclick="query3('query3')">
+                        <b>How much does it cost to receive an Instant Cash Offer?</b>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span id="query3" style="display: none;">It's free! There is no fee to obtain or redeem the Offer.</span>
+                </td>
+                </tr>
+                <tr>
+                <td class="query">
+                    <a style="cursor: pointer; " onclick="query4('query4')">
+                        <b>Do I have to purchase a car with my Instant Cash Offer?</b>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span id="query4" style="display: none;">No. You can walk away with a check in hand or use the Offer towards the purchase of another vehicle.</span>
+                </td>
+                </tr>
+                <tr>
+                <td class="query">
+                    <a style="cursor: pointer; " onclick="query5('query5')">
+                        <b>How long is my Instant Cash Offer valid for?</b>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span id="query5" style="display: none;">Your Instant Cash Offer is valid for 7 days. After that time, you can resubmit your request, 
+                    but your Offer amount may change.</span>
+                </td>
+                </tr>
+                <tr>
+                <td class="query">
+                    <a style="cursor: pointer; " onclick="query6('query6')">
+                        <b>How long do I have to accept my Offer after inspection?</b>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span id="query6" style="display: none;">You'll have 1 day after inspection to redeem your Instant Cash Offer. 
+                    If your car's condition changes or you add more than 50 miles from the time of inspection, your Offer may be recalculated.</span>
+                </td>
+                </tr>
+                <tr>
+                <td class="query">
+                    <a style="cursor: pointer; " onclick="query7('query7')">
+                        <b>How long will it take to receive my Instant Cash Offer?</b>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <span id="query7" style="display: none;">You will typically receive an Offer within minutes. 
+                    The Instant Cash Offer program is not available for all makes and models, so if your vehicle falls into one of the unavailable categories, you will not receive an Offer.</span>
+                </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="readyToSupportYou">
+                <h3 style="color:#031e65;"><b>When you're here, you're in the driver's seat</b></h3>
+                <p>Your car buying destiny is in your hands, but we will help you every step of the way. 
+                    We built this site to make car buying as fast and easy as possible. 
+                Reinvent how you buy, do it online in 15 minutes or less with CarBreezy.</p>
+            </div>
+        </div>
+        <footer class="text-center text-lg-start bg-white text-muted">
+            
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+                <!-- Left -->
+                <div class="me-5 d-none d-lg-block">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <div>
+                    
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="" class="me-4 link-secondary a-reset">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3 text-secondary"></i><img src="assets/img/thumbnail/logo.jpg"
+                                    width="200px" style="margin: 10px 10px 10px 10px;">
+                            </h6>
+                            <p>You can choose any dream car for yourself <a href="#cover"
+                                    style="text-decoration: none;">here</a>.</p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <ul id="BuySell" class="a-reset1">
+                                <li>
+                                    <h6 class="text-uppercase fw-bold mb-4">
+                                        <b>Buying & Selling</b>
+                                    </h6>
+                                </li>
+                                <li><a href="#search" class="text-reset">Find a Car</a></li>
+                                <li><a href="Sell.html" class="text-reset">Sell your Car</a></li>
+                                <li><a href="Offers.html" class="text-reset">Offers for you</a></li>
+                                <li><a href="Offers.html#myInstantCashOffer" class="text-reset">My Instant Cash Offer</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <ul id="ourCompany" class="a-reset1">
+                                <li>
+                                    <h6 class="text-uppercase fw-bold mb-4">
+                                        <b>Our Company</b>
+                                    </h6>
+                                </li>
+                                <li><a href="AboutUs.html" class="text-reset">About CarBreezy</a></li>
+                                <li><a href="tel:(253) 289 5242" class="text-reset">Contact CarBreezy</a></li>
+                                <li><a href="Sitemap.html" class="text-reset">Sitemap</a></li>
+                                <li><a href="Sell.html#resolveYourQueries" class="text-reset">Resolve Your Queries</a></li>
+                            </ul>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" id="contactUS">
+                            <!-- Links -->
+                            <h4 class="text-uppercase fw-bold mb-4">Contact Us</h4>
+                            <p>
+                            <h6 style="font-weight: bold;">We're here to help.</h6>
+                            </p>
+                            <p>Contact us if you have a question or concern. We want you to feel confident and
+                                supported throughout your vehicle-buying joyrney. We'll do our very best to provide
+                                answers and set your mind at ease.</p>
+                            <p style="color:rgb(3, 3, 49);"><a href="mailto:support@carbreezy.com"
+                                    style="text-decoration: none;"><i
+                                        class="fa fa-envelope me-3 text-secondary"></i>support@carbreezy.com</a></p>
+                            <p style="color:rgb(3, 3, 49);"><a href="tel:(253) 289-5242"
+                                    style="text-decoration: none;"><i class="fa fa-phone me-3 text-secondary"></i> (253)
+                                    289-5242)</a></p>
+                            <p style="color:rgb(3, 3, 49);"><a href="tel:1-253-289-5242"
+                                    style="text-decoration: none;"><i class="fa fa-print me-3 text-secondary"></i>
+                                    1-253-289-5242</a></p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold" href="">Carbreezy.com</a>
+            </div>
+    
+            <div class="scroll-footer">
+            
+                <div class="scroll-footer__ticker">
+                <p class="continuous"><span id="date"></span></p>
+                <p class="continuous continuous--two"><span id="GeoLocation"></span></p>
+                </div>
+            
+            </div>
+        </footer>
+    </div>
+    <!-- loading four circles animation-->
+    <div id="loader">
+        <div class="wap-loading">
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- get current date, time, and location to show in a continuous scrolling ticker at the bottom of the page-->
+    <script>
+        var today = new Date();
+        var date = (+ today.getHours() +":" +today.getMinutes() +"&nbsp;&nbsp;" + (today.getMonth()+1) +"/" + today.getDate() +"/" + today.getFullYear());
+        document.getElementById("date").innerHTML = date;
+
+        var x = document.getElementById("GeoLocation");
+            function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            }
+            function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "&nbsp;&nbsp;Longitude: " + position.coords.longitude;
+            }
+            getLocation();
+    </script>
+    <link rel="stylesheet" href="assets/css/continuousScrolling.css">
+</body>
+</html>
